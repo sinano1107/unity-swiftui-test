@@ -11,7 +11,24 @@
 		9F562C6E2A4D208000C8EE5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F562C6D2A4D208000C8EE5E /* ContentView.swift */; };
 		9F562C702A4D208000C8EE5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F562C6F2A4D208000C8EE5E /* Assets.xcassets */; };
 		9F562C732A4D208000C8EE5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F562C722A4D208000C8EE5E /* Preview Assets.xcassets */; };
+		9FC33B072A4D4221004684D2 /* UnityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC33B062A4D4221004684D2 /* UnityBridge.swift */; };
+		9FC33B0B2A4D4A99004684D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */; };
+		9FDA85492A4D41B400461026 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDA85472A4D41B400461026 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FDA854A2A4D41B400461026 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FDA85492A4D41B400461026 /* UnityFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9F562C682A4D208000C8EE5E /* sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +36,9 @@
 		9F562C6D2A4D208000C8EE5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F562C6F2A4D208000C8EE5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F562C722A4D208000C8EE5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9FC33B062A4D4221004684D2 /* UnityBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityBridge.swift; sourceTree = "<group>"; };
+		9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9FDA85472A4D41B400461026 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,7 @@
 			children = (
 				9F562C6A2A4D208000C8EE5E /* sandbox */,
 				9F562C692A4D208000C8EE5E /* Products */,
+				9FDA85462A4D41B400461026 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +76,8 @@
 				9F562C6D2A4D208000C8EE5E /* ContentView.swift */,
 				9F562C6F2A4D208000C8EE5E /* Assets.xcassets */,
 				9F562C712A4D208000C8EE5E /* Preview Content */,
+				9FC33B062A4D4221004684D2 /* UnityBridge.swift */,
+				9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */,
 			);
 			path = sandbox;
 			sourceTree = "<group>";
@@ -67,6 +90,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9FDA85462A4D41B400461026 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA85472A4D41B400461026 /* UnityFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +108,7 @@
 				9F562C642A4D208000C8EE5E /* Sources */,
 				9F562C652A4D208000C8EE5E /* Frameworks */,
 				9F562C662A4D208000C8EE5E /* Resources */,
+				9FDA854A2A4D41B400461026 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC33B0B2A4D4A99004684D2 /* LaunchScreen.storyboard in Resources */,
 				9F562C732A4D208000C8EE5E /* Preview Assets.xcassets in Resources */,
 				9F562C702A4D208000C8EE5E /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F562C6E2A4D208000C8EE5E /* ContentView.swift in Sources */,
+				9FC33B072A4D4221004684D2 /* UnityBridge.swift in Sources */,
 				9F562C6C2A4D208000C8EE5E /* sandboxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +306,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,7 +335,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

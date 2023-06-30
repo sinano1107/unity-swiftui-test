@@ -7,15 +7,27 @@
 
 import SwiftUI
 
+struct MyViewController: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIViewController {
+        let vc = UIViewController()
+        let unity = UnityBridge.getInstance()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            unity.show(controller: vc)
+        }
+        return vc
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        // Empty.
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            MyViewController()
+            Text("This text overlays Unity!")
         }
-        .padding()
     }
 }
 
