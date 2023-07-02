@@ -26,4 +26,10 @@ extern "C" {
         [api onUnityStateChange: str];
     }
 
+    void
+    setTestDelegate(TestDelegate delegate)
+    {
+        [api onSetTestDelegate: delegate];
+    }
+
 }

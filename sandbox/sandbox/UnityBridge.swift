@@ -8,7 +8,37 @@
 import Foundation
 import UnityFramework
 
+class API: NativeCallsProtocol {
+    
+    internal weak var bridge: UnityBridge!
+    
+    /**
+     内部メソッドはUnityによって呼び出される
+     このオブジェクトは、`FrameworkLibAPI.registerAPIforNativeCalls(api)`を使用して、
+     これらの呼び出しのリスナーとして登録されます。
+             これらの呼び出しはUnityからネイティブアプリに転送されます。
+     */
+    
+    internal func onUnityStateChange(_ state: String) {
+        switch (state) {
+        case "ready":
+            self.bridge.unityGotReady()
+        default:
+            return
+        }
+    }
+    
+    internal func onSetTestDelegate(_ delegate: TestDelegate!) {}
+    
+}
+
 class UnityBridge: UIResponder, UIApplicationDelegate, UnityFrameworkListener {
+    public internal(set) var isReady: Bool = false
+    
+    public var api: API
+    
+    public var onReady: () -> Void = {}
+    
     private static var instance: UnityBridge?
     
     /// UnityFramework instance
@@ -46,11 +76,15 @@ class UnityBridge: UIResponder, UIApplicationDelegate, UnityFrameworkListener {
     override internal init() {
         ufw = UnityBridge.loadUnityFramework()!
         ufw.setDataBundleId("com.unity3d.framework")
-//        api = API()
+        api = API()
+        
         super.init()
         
+        api.bridge = self
         ufw.register(self)
-//        FrameworkLibAPI.registerAPIforNativeCalls(api)
+        // これは `api` オブジェクトの登録を呼び出す。
+        // 登録されると、Unityコール は `api` インスタンスに転送される。
+        FrameworkLibAPI.registerAPIforNativeCalls(api)
         
         ufw.runEmbedded(withArgc: CommandLine.argc, argv: CommandLine.unsafeArgv, appLaunchOpts: nil)
     }
@@ -60,10 +94,17 @@ class UnityBridge: UIResponder, UIApplicationDelegate, UnityFrameworkListener {
     ///
     /// - Parameter controller: Controller that will host the Unity view
     public func show(controller: UIViewController) {
-        ufw.showUnityWindow()
+        if isReady {
+            ufw.showUnityWindow()
+        }
         if let view = self.view {
             controller.view?.addSubview(view)
         }
+    }
+    
+    internal func unityGotReady() {
+        isReady = true
+        onReady()
     }
     
     /// Unloads the Unity framework

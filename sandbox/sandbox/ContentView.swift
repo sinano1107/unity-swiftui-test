@@ -10,16 +10,13 @@ import SwiftUI
 struct MyViewController: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         let vc = UIViewController()
-        let unity = UnityBridge.getInstance()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            unity.show(controller: vc)
+        UnityBridge.getInstance().onReady = {
+            UnityBridge.getInstance().show(controller: vc)
         }
         return vc
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        // Empty.
-    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }
 
 struct ContentView: View {

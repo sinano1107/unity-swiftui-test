@@ -11,9 +11,10 @@
 		9F562C6E2A4D208000C8EE5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F562C6D2A4D208000C8EE5E /* ContentView.swift */; };
 		9F562C702A4D208000C8EE5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F562C6F2A4D208000C8EE5E /* Assets.xcassets */; };
 		9F562C732A4D208000C8EE5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F562C722A4D208000C8EE5E /* Preview Assets.xcassets */; };
+		9FAC84FB2A4FDAB500B48857 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC33B0D2A4FCFD8004684D2 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FAC84FD2A4FDB6C00B48857 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC33B0D2A4FCFD8004684D2 /* UnityFramework.framework */; };
 		9FC33B072A4D4221004684D2 /* UnityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC33B062A4D4221004684D2 /* UnityBridge.swift */; };
 		9FC33B0B2A4D4A99004684D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */; };
-		9FDA85492A4D41B400461026 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDA85472A4D41B400461026 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9FDA85492A4D41B400461026 /* UnityFramework.framework in Embed Frameworks */,
+				9FAC84FB2A4FDAB500B48857 /* UnityFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +39,8 @@
 		9F562C722A4D208000C8EE5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9FC33B062A4D4221004684D2 /* UnityBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityBridge.swift; sourceTree = "<group>"; };
 		9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9FDA85472A4D41B400461026 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FC33B0C2A4FC651004684D2 /* NativeCallProxy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeCallProxy-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FC33B0D2A4FCFD8004684D2 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAC84FD2A4FDB6C00B48857 /* UnityFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 				9F562C712A4D208000C8EE5E /* Preview Content */,
 				9FC33B062A4D4221004684D2 /* UnityBridge.swift */,
 				9FC33B0A2A4D4A99004684D2 /* LaunchScreen.storyboard */,
+				9FC33B0C2A4FC651004684D2 /* NativeCallProxy-Bridging-Header.h */,
 			);
 			path = sandbox;
 			sourceTree = "<group>";
@@ -93,7 +97,7 @@
 		9FDA85462A4D41B400461026 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9FDA85472A4D41B400461026 /* UnityFramework.framework */,
+				9FC33B0D2A4FCFD8004684D2 /* UnityFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,6 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tftf161107.sandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "sandbox/NativeCallProxy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -346,6 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tftf161107.sandbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "sandbox/NativeCallProxy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
