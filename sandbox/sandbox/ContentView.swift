@@ -11,6 +11,7 @@ struct MyViewController: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         let vc = UIViewController()
         UnityBridge.getInstance().onReady = {
+            UnityBridge.getInstance().api.test("this works so well!")
             UnityBridge.getInstance().show(controller: vc)
         }
         return vc

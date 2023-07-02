@@ -12,6 +12,14 @@ class API: NativeCallsProtocol {
     
     internal weak var bridge: UnityBridge!
     
+    /** Unityで宣言された静的関数への関数ポインタ */
+    private var testCallback: TestDelegate!
+    
+    /** Public API */
+    public func test(_ value: String) {
+        self.testCallback(value)
+    }
+    
     /**
      内部メソッドはUnityによって呼び出される
      このオブジェクトは、`FrameworkLibAPI.registerAPIforNativeCalls(api)`を使用して、
@@ -28,7 +36,9 @@ class API: NativeCallsProtocol {
         }
     }
     
-    internal func onSetTestDelegate(_ delegate: TestDelegate!) {}
+    internal func onSetTestDelegate(_ delegate: TestDelegate!) {
+        self.testCallback = delegate
+    }
     
 }
 
